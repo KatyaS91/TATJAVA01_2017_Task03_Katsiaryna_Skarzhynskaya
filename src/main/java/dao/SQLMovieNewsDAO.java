@@ -46,7 +46,7 @@ public class SQLMovieNewsDAO implements MovieNewsDAO {
 
     public News selectAllMovieNews(News news) throws DAOException {
         try {
-            FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\MoviesNewsCatalog.txt");
+            FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\MovieNewsCatalog.txt");
             byte[] str = new byte[reader.available()];
             reader.read(str);
             String content = new String(str);
