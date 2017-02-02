@@ -1,7 +1,6 @@
 package controller;
 
 import beans.News;
-import service.BookNewsService;
 import service.DiskNewsService;
 import service.ServiceException;
 import service.ServiceFactory;

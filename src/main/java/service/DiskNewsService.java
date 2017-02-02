@@ -1,6 +1,5 @@
 package service;
 
-import beans.DiskNews;
 import beans.News;
 
 /**
@@ -9,5 +8,6 @@ import beans.News;
 public interface DiskNewsService {
 
     void addDiskNews(News news) throws ServiceException;
-    DiskNews selectAllDiskNews(DiskNews news) throws ServiceException;
+
+    News selectAllDiskNews(News news) throws ServiceException;
 }

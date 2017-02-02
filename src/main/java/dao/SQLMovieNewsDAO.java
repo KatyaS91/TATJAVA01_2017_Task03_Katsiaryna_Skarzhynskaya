@@ -2,9 +2,7 @@ package dao;
 
 import beans.News;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by Katsiaryna_Skarzhyns on 2/1/2017.
@@ -28,7 +26,35 @@ public class SQLMovieNewsDAO implements MovieNewsDAO {
 
     }
 
-    public MovieNewsDAO selectAllMovieNews(News news) throws DAOException{
-        return null;
+/*    public News selectAllMovieNews(News news) throws DAOException{
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\MovieNewsCatalog.txt"));
+            String line = null;
+            try {
+                while ((line = reader.readLine()) !=null){
+                    news.setAllNews(line);
+                }
+            } catch (IOException e){
+                System.out.println(e.getMessage());
+            }
+
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        return news;
+    }*/
+
+    public News selectAllMovieNews(News news) throws DAOException {
+        try {
+            FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\MoviesNewsCatalog.txt");
+            byte[] str = new byte[reader.available()];
+            reader.read(str);
+            String content = new String(str);
+            news.setAllNews(content);
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return news;
     }
 }

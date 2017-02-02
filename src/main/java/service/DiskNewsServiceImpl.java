@@ -1,8 +1,7 @@
 package service;
 
-import beans.DiskNews;
+
 import beans.News;
-import dao.BookNewsDAO;
 import dao.DAOException;
 import dao.DAOFactory;
 import dao.DiskNewsDAO;
@@ -22,7 +21,17 @@ public class DiskNewsServiceImpl implements DiskNewsService {
         }
 
     }
-    public DiskNews selectAllDiskNews(DiskNews news) throws ServiceException{
-        return null;
+
+    public News selectAllDiskNews(News news) throws ServiceException {
+        try {
+            DAOFactory daoObjectFactory = DAOFactory.getInstance();
+            DiskNewsDAO diskNewsDAO = daoObjectFactory.getDiskNewsDAO();
+            diskNewsDAO.selectAllDiskNews(news);
+
+        } catch (DAOException e) {
+            System.out.println(e.getMessage());
+        }
+        return news;
+
     }
 }

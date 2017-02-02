@@ -1,6 +1,5 @@
 package service;
 
-import beans.BookNews;
 import beans.News;
 import dao.BookNewsDAO;
 import dao.DAOException;
@@ -20,11 +19,16 @@ public class BookNewsServiceImpl implements BookNewsService {
         } catch (DAOException e){
             System.out.println(e.getMessage());
         }
-
-
-
     }
-    public BookNews findAllBookNews(BookNews news) throws ServiceException{
-        return null;
+
+    public News findAllBookNews(News news) throws ServiceException {
+        try {
+            DAOFactory daoObjectFactory = DAOFactory.getInstance();
+            BookNewsDAO bookNewsDAO = daoObjectFactory.getBookNewsDAO();
+            bookNewsDAO.selectAllBookNews(news);
+        } catch (DAOException e) {
+            System.out.println(e.getMessage());
+        }
+        return news;
     }
 }

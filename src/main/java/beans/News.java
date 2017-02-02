@@ -6,6 +6,16 @@ package beans;
 public class News {
     String title;
     String name;
+    String description;
+    String allNews;
+
+    public String getAllNews() {
+        return allNews;
+    }
+
+    public void setAllNews(String allNews) {
+        this.allNews = allNews;
+    }
 
     public String getTitle() {
         return title;
@@ -31,6 +41,16 @@ public class News {
         this.description = description;
     }
 
-    String description;
+    @Override
+    public String toString() {
+        return "News{" +
+                "title='" + title + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", allNews='" + allNews + '\'' +
+                '}';
+    }
+
+
 
 }

@@ -8,5 +8,6 @@ import beans.News;
 public interface MovieNewsDAO {
 
     void putMovieNews(News news) throws DAOException;
-    MovieNewsDAO selectAllMovieNews(News news) throws DAOException;
+
+    News selectAllMovieNews(News news) throws DAOException;
 }

@@ -9,5 +9,5 @@ public interface DiskNewsDAO {
 
     void putDiskNews(News news) throws DAOException;
 
-    DiskNewsDAO selectAllDiskNews(News news) throws DAOException;
+    News selectAllDiskNews(News news) throws DAOException;
 }

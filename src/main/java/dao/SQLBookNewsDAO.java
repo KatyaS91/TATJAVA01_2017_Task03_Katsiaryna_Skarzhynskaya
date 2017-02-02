@@ -10,7 +10,7 @@ import java.io.*;
  */
 public class SQLBookNewsDAO implements BookNewsDAO {
 
-    public void putBookNews(News news) throws DAOException{
+    public void putBookNews(News news) throws DAOException {
 
         String title = news.getTitle();
         String name = news.getName();
@@ -19,15 +19,43 @@ public class SQLBookNewsDAO implements BookNewsDAO {
         try {
             File file = new File("C:\\Users\\Katsiaryna_Skarzhyns\\IdeaProjects\\BooksNewsCatalog.txt");
             FileWriter writer = new FileWriter(file, true);
-            String text = "\n"+ title + " " + name + " " + description + "\n";
+            String text = title + " " + name + " " + description + "\n";
             writer.write(text);
             writer.flush();
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public News selectAllBookNews(News news) throws DAOException{
-        return null;
+    /*    public News selectAllBookNews(News news) throws DAOException {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\BooksNewsCatalog.txt"));
+                String line = null;
+                try {
+                    while ((line = reader.readLine()) !=null){
+                        news.setAllNews(line);
+                    }
+                } catch (IOException e){
+                    System.out.println(e.getMessage());
+                }
+
+            } catch (FileNotFoundException e){
+                System.out.println(e.getMessage());
+            }
+            return news;
+        }*/
+    public News selectAllBookNews(News news) throws DAOException {
+        try {
+            FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\BooksNewsCatalog.txt");
+            byte[] str = new byte[reader.available()];
+            reader.read(str);
+            String content = new String(str);
+            news.setAllNews(content);
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return news;
     }
+
 }

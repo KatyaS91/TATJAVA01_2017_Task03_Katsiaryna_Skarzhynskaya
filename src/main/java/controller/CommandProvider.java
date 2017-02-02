@@ -13,8 +13,10 @@ public class CommandProvider {
         repository.put(CommandName.ADD_BOOK_NEWS, new AddBookNews());
         repository.put(CommandName.ADD_DISK_NEWS, new AddDiskNews());
         repository.put(CommandName.ADD_MOVIE_NEWS, new AddMovieNews());
+        repository.put(CommandName.FIND_BOOK_NEWS, new FindBookNews());
         repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
-        //repository.put(CommandName.FIND_BOOK_NEWS, new FindBookNews());
+        repository.put(CommandName.FIND_DISK_NEWS, new FindDiskNews());
+        repository.put(CommandName.FIND_MOVIE_NEWS, new FindMovieNews());
     }
     Command getCommand(String name){
         CommandName commandName = null;

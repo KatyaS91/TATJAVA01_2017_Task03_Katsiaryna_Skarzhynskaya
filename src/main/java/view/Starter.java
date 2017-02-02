@@ -28,9 +28,22 @@ public class Starter {
 
         News movieNews = new MovieNews();
         movieNews.setTitle("Хатико");
-        movieNews.setName("В кинотеатре домонстрируюь фильм Хатико на языке оргигнала");
+        movieNews.setName("В кинотеатре домонстрирую фильм Хатико на языке оргигнала");
         movieNews.setDescription("Some text about it");
         System.out.println(controller.executeTask("ADD_MOVIE_NEWS", movieNews));
+
+        News selectAllBooks = new BookNews();
+        controller.executeTask("FIND_BOOK_NEWS", selectAllBooks);
+        System.out.println("Все новости о книгах: " + selectAllBooks.getAllNews());
+
+        News selectAllDisks = new DiskNews();
+        controller.executeTask("FIND_DISK_NEWS", selectAllDisks);
+        System.out.println("Все новости о дисках: " + selectAllDisks.getAllNews());
+
+        News selectAllMovies = new MovieNews();
+        controller.executeTask("FIND_MOVIE_NEWS", selectAllMovies);
+        System.out.println("Все новости о дисках: " + selectAllMovies.getAllNews());
+
     }
 
 }

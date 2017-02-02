@@ -1,6 +1,5 @@
 package service;
 
-import beans.MovieNews;
 import beans.News;
 
 /**
@@ -8,5 +7,6 @@ import beans.News;
  */
 public interface MovieNewsService {
     void addMovieNews(News news) throws ServiceException;
-    MovieNews selectAllMovieNews(News news) throws ServiceException;
+
+    News selectAllMovieNews(News news) throws ServiceException;
 }
