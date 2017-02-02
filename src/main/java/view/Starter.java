@@ -10,7 +10,7 @@ import controller.Controller;
  * Created by Katsiaryna_Skarzhyns on 2/1/2017.
  */
 public class Starter {
-    public static void main(String[] args){
+/*    public static void main(String[] args){
 
         News bookNews = new BookNews();
         bookNews.setTitle("Айвенго");
@@ -44,6 +44,6 @@ public class Starter {
         controller.executeTask("FIND_MOVIE_NEWS", selectAllMovies);
         System.out.println("Все новости о дисках: " + selectAllMovies.getAllNews());
 
-    }
+    }*/
 
 }
