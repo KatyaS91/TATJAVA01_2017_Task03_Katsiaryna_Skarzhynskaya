@@ -1,10 +1,9 @@
 package com.task3Catalog.LastVersion.SQLBookNewsDAOTests;
 
-import dao.DAOException;
 import org.testng.annotations.Test;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by Katsiaryna_Skarzhyns on 2/2/2017.
@@ -12,9 +11,9 @@ import java.io.FileNotFoundException;
 public class SQLBookNewsDAOTest {
 
     @Test(expectedExceptions = FileNotFoundException.class)
-    public void testFindFile() throws FileNotFoundException {
-        FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\BookNews.txt");
-    }
+    public void selectAllBookNewsWrongFIleTest() throws FileNotFoundException {
+        FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\Test1.txt");
 
+    }
 
 }

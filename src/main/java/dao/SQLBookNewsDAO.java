@@ -27,23 +27,6 @@ public class SQLBookNewsDAO implements BookNewsDAO {
         }
     }
 
-    /*    public News selectAllBookNews(News news) throws DAOException {
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\BooksNewsCatalog.txt"));
-                String line = null;
-                try {
-                    while ((line = reader.readLine()) !=null){
-                        news.setAllNews(line);
-                    }
-                } catch (IOException e){
-                    System.out.println(e.getMessage());
-                }
-
-            } catch (FileNotFoundException e){
-                System.out.println(e.getMessage());
-            }
-            return news;
-        }*/
     public News selectAllBookNews(News news) throws DAOException {
         try {
             FileInputStream reader = new FileInputStream("C:\\\\Users\\\\Katsiaryna_Skarzhyns\\\\IdeaProjects\\\\BooksNewsCatalog.txt");
@@ -51,7 +34,6 @@ public class SQLBookNewsDAO implements BookNewsDAO {
             reader.read(str);
             String content = new String(str);
             news.setAllNews(content);
-
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
